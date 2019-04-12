@@ -54,6 +54,7 @@ pipeline {
     }
     stage('Remove Unused docker image'){
         steps{
+            sh "docker ps"
             //sh "docker image prune -all"
         }
     }
