@@ -2,11 +2,11 @@ version: '3.4'
 
 services:
 
-  identity.api:
-    image: ${REGISTRY:-eshop}/identity.api:${PLATFORM:-linux}-${TAG:-latest}
-    build:
-      context: .
-      dockerfile: src/Services/Identity/Identity.API/Dockerfile    
+  #identity.api:
+  #  image: ${REGISTRY:-eshop}/identity.api:${PLATFORM:-linux}-${TAG:-latest}
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Identity/Identity.API/Dockerfile    
 
   #basket.api:
   #  image: ${REGISTRY:-eshop}/basket.api:${PLATFORM:-linux}-${TAG:-latest}
@@ -156,11 +156,11 @@ services:
   #    context: .
   #    dockerfile: src/Web/WebStatus/Dockerfile
 #
-  #webspa:
-  #  image: ${REGISTRY:-eshop}/webspa:${PLATFORM:-linux}-${TAG:-latest}
-  #  build:
-  #    context: .
-  #    dockerfile: src/Web/WebSPA/Dockerfile    
+  webspa:
+    image: ${REGISTRY:-eshop}/webspa:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Web/WebSPA/Dockerfile    
 #
   #webmvc:
   #  image: ${REGISTRY:-eshop}/webmvc:${PLATFORM:-linux}-${TAG:-latest}
