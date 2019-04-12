@@ -2,6 +2,8 @@ pipeline {
   environment {
     registry = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com"
     registryCredential = "ecr:sa-east-1:ecr-id"
+    TAG = env.BUILD_NUMBER
+    REGISTRY = "repo-docker"
   }
   agent any
   stages {
@@ -18,7 +20,7 @@ pipeline {
       steps {
         script{
             sh "docker images ls"
-            //sh 'docker-compose -f ./docker-compose_aws.yml build'
+            sh 'docker-compose -f ./docker-compose_aws.yml build'
         }
       }
     }
@@ -43,17 +45,17 @@ pipeline {
                     //docker.image('mobileshoppingagg').push(env.BUILD_NUMBER)
                     //docker.image('webshoppingagg').push(env.BUILD_NUMBER)
                     //docker.image('ordering.signalrhub').push(env.BUILD_NUMBER)
-                    docker.image('repo-docker/webstatus').push()
+                    docker.image(env.REGISTRY + '/webstatus:latest').push(env.BUILD_NUMBER)
                     //docker.image('webspa').push(env.BUILD_NUMBER)
                     //docker.image('webmvc').push(env.BUILD_NUMBER)
-                    //docker.image('webhooks.client').push(env.BUILD_NUMBER)
+                    //docker.image('webhooks-client').push(env.BUILD_NUMBER)
                 }
         }
       }
     }
     stage('Remove Unused docker image'){
         steps{
-            sh "docker image prune -all"
+            //sh "docker image prune -all"
         }
     }
   }
