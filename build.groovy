@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com"
     registryCredential = "ecr:sa-east-1:ecr-id"
-    imageName = "basket:$BUILD_NUMBER"
+    repository = "repo-docker/eshop/"
   }
   agent any
   stages {
@@ -27,26 +27,26 @@ pipeline {
         script{
                 docker.withRegistry(registry, registryCredential)
                 {
-                    docker.image('identity.api').push(env.BUILD_NUMBER)
-                    docker.image('basket.api').push(env.BUILD_NUMBER)
-                    docker.image('catalog.api').push(env.BUILD_NUMBER)
-                    docker.image('ordering.api').push(env.BUILD_NUMBER)
-                    docker.image('ordering.backgroundtasks').push(env.BUILD_NUMBER)
-                    docker.image('marketing.api').push(env.BUILD_NUMBER)
-                    docker.image('payment.api').push(env.BUILD_NUMBER)
-                    docker.image('locations.api').push(env.BUILD_NUMBER)
-                    docker.image('webhooks.api').push(env.BUILD_NUMBER)
-                    docker.image('mobileshoppingapigw').push(env.BUILD_NUMBER)
-                    docker.image('mobilemarketingapigw').push(env.BUILD_NUMBER)
-                    docker.image('webshoppingapigw').push(env.BUILD_NUMBER)
-                    docker.image('webmarketingapigw').push(env.BUILD_NUMBER)
-                    docker.image('mobileshoppingagg').push(env.BUILD_NUMBER)
-                    docker.image('webshoppingagg').push(env.BUILD_NUMBER)
-                    docker.image('ordering.signalrhub').push(env.BUILD_NUMBER)
-                    docker.image('webstatus').push(env.BUILD_NUMBER)
-                    docker.image('webspa').push(env.BUILD_NUMBER)
-                    docker.image('webmvc').push(env.BUILD_NUMBER)
-                    docker.image('webhooks.client').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'identity.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'basket.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'catalog.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'ordering.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'ordering.backgroundtasks').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'marketing.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'payment.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'locations.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webhooks.api').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'mobileshoppingapigw').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'mobilemarketingapigw').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webshoppingapigw').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webmarketingapigw').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'mobileshoppingagg').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webshoppingagg').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'ordering.signalrhub').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webstatus').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webspa').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webmvc').push(env.BUILD_NUMBER)
+                    docker.image(repository + 'webhooks.client').push(env.BUILD_NUMBER)
                 }
         }
       }
