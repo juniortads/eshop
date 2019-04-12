@@ -18,7 +18,7 @@ pipeline {
       steps {
         script{
             sh 'ls -la'
-            //sh 'docker-compose -f ./docker-compose_aws.yml build'
+            //sh 'docker-compose -e REGISTRY=repo-docker -f ./docker-compose_aws.yml build'
         }
       }
     }
