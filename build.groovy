@@ -19,7 +19,7 @@ pipeline {
       steps {
         script{
             sh "docker images ls"
-            sh 'docker-compose --build-arg REGISTRY=repo-docker -f ./docker-compose_aws.yml build'
+            sh 'docker-compose -f ./docker-compose_aws.yml build --build-arg REGISTRY=repo-docker'
         }
       }
     }
