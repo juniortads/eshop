@@ -7,8 +7,6 @@ services:
     build:
       context: .
       dockerfile: src/Services/Identity/Identity.API/Dockerfile    
-    depends_on:
-      - sql.data
 
   #basket.api:
   #  image: ${REGISTRY:-eshop}/basket.api:${PLATFORM:-linux}-${TAG:-latest}
