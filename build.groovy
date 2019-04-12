@@ -17,7 +17,7 @@ pipeline {
     stage('Building image') {
       steps {
         script{
-            sh 'docker-compose -e REGISTRY=repo-docker -f ./docker-compose_aws.yml build'
+            sh 'docker-compose -f ./docker-compose_aws.yml build'
         }
       }
     }

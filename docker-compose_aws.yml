@@ -151,7 +151,7 @@ services:
   #    - basket.api
 #
   webstatus:
-    image: ${REGISTRY:-eshop}/webstatus
+    image: repo-docker/webstatus
     build:
       context: .
       dockerfile: src/Web/WebStatus/Dockerfile
