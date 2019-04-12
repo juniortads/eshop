@@ -20,7 +20,7 @@ pipeline {
       steps {
         script{
             sh 'ls -la'
-            sh 'docker-compose build -f ./docker-compose_aws.yml'
+            sh 'docker-compose -f ./docker-compose_aws.yml build'
         }
       }
     }
