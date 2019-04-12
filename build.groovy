@@ -3,6 +3,7 @@ pipeline {
     registry = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com"
     registryCredential = "ecr:sa-east-1:ecr-id"
     repository = "repo-docker/eshop/"
+    REGISTRY = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com/repo-docker/eshop/"
   }
   agent any
   stages {
