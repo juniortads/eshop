@@ -17,6 +17,7 @@ pipeline {
     stage('Building image') {
       steps {
         script{
+            sh "docker images ls"
             sh 'docker-compose -f ./docker-compose_aws.yml build'
         }
       }
@@ -42,7 +43,7 @@ pipeline {
                     //docker.image('mobileshoppingagg').push(env.BUILD_NUMBER)
                     //docker.image('webshoppingagg').push(env.BUILD_NUMBER)
                     //docker.image('ordering.signalrhub').push(env.BUILD_NUMBER)
-                    docker.image('repo-docker/webstatus').push(env.BUILD_NUMBER)
+                    docker.image('repo-docker/webstatus').push()
                     //docker.image('webspa').push(env.BUILD_NUMBER)
                     //docker.image('webmvc').push(env.BUILD_NUMBER)
                     //docker.image('webhooks.client').push(env.BUILD_NUMBER)
