@@ -2,7 +2,6 @@ pipeline {
   environment {
     registry = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com"
     registryCredential = "ecr:sa-east-1:ecr-id"
-    TAG = "${BUILD_NUMBER}"
     REGISTRY = "repo-docker"
   }
   agent any
