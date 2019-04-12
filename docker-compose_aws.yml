@@ -150,17 +150,17 @@ services:
   #    - catalog.api
   #    - basket.api
 #
-  #webstatus:
-  #  image: ${REGISTRY:-eshop}/webstatus:${PLATFORM:-linux}-${TAG:-latest}
-  #  build:
-  #    context: .
-  #    dockerfile: src/Web/WebStatus/Dockerfile
-#
-  webspa:
-    image: ${REGISTRY:-eshop}/webspa:${PLATFORM:-linux}-${TAG:-latest}
+  webstatus:
+    image: webstatus
     build:
       context: .
-      dockerfile: src/Web/WebSPA/Dockerfile    
+      dockerfile: src/Web/WebStatus/Dockerfile
+#
+  #webspa:
+  #  image: ${REGISTRY:-eshop}/webspa:${PLATFORM:-linux}-${TAG:-latest}
+  #  build:
+  #    context: .
+  #    dockerfile: src/Web/WebSPA/Dockerfile    
 #
   #webmvc:
   #  image: ${REGISTRY:-eshop}/webmvc:${PLATFORM:-linux}-${TAG:-latest}

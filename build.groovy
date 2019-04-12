@@ -1,9 +1,7 @@
 pipeline {
   environment {
-    registry = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com"
+    registry = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com/repo-docker/"
     registryCredential = "ecr:sa-east-1:ecr-id"
-    repository = "repo-docker/eshop/"
-    REGISTRY = "https://451393511481.dkr.ecr.sa-east-1.amazonaws.com/repo-docker/"
   }
   agent any
   stages {
@@ -45,8 +43,8 @@ pipeline {
                     //docker.image('mobileshoppingagg').push(env.BUILD_NUMBER)
                     //docker.image('webshoppingagg').push(env.BUILD_NUMBER)
                     //docker.image('ordering.signalrhub').push(env.BUILD_NUMBER)
-                    //docker.image('webstatus').push(env.BUILD_NUMBER)
-                    docker.image('webspa').push(env.BUILD_NUMBER)
+                    docker.image('webstatus').push(env.BUILD_NUMBER)
+                    //docker.image('webspa').push(env.BUILD_NUMBER)
                     //docker.image('webmvc').push(env.BUILD_NUMBER)
                     //docker.image('webhooks.client').push(env.BUILD_NUMBER)
                 }
