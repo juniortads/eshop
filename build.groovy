@@ -19,6 +19,7 @@ pipeline {
     stage('Building image') {
       steps {
         script{
+            sh 'ls -la'
             sh 'docker-compose build docker-compose_aws.yml'
         }
       }
