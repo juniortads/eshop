@@ -8,80 +8,80 @@ services:
       context: .
       dockerfile: src/Services/Identity/Identity.API/Dockerfile    
   
-  basket.api:
-    image: repo-docker/basket
-    build:
-      context: .
-      dockerfile: src/Services/Basket/Basket.API/Dockerfile    
-
-  catalog.api:
-    image: repo-docker/catalog
-    build:
-      context: .
-      dockerfile: src/Services/Catalog/Catalog.API/Dockerfile
-
-  ordering.api:
-    image: repo-docker/ordering
-    build:
-      context: .
-      dockerfile: src/Services/Ordering/Ordering.API/Dockerfile    
-
-  ordering.backgroundtasks:
-    image: repo-docker/orderingbackgroundtasks
-    build:
-      context: .
-      dockerfile: src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile    
-
-  marketing.api:
-    image: repo-docker/marketing
-    build:
-      context: .
-      dockerfile: src/Services/Marketing/Marketing.API/Dockerfile    
-
-  payment.api:
-    image: repo-docker/payment
-    build:
-      context: .
-      dockerfile: src/Services/Payment/Payment.API/Dockerfile
-
-  locations.api:
-    image: repo-docker/locations
-    build:
-      context: .
-      dockerfile: src/Services/Location/Locations.API/Dockerfile
-
-  webhooks.api:
-    image: repo-docker/webhooks
-    build:
-      context: .
-      dockerfile: src/Services/Webhooks/Webhooks.API/Dockerfile
-
-  ordering.signalrhub:
-    image: repo-docker/orderingsignalrhub
-    build:
-      context: .
-      dockerfile: src/Services/Ordering/Ordering.SignalrHub/Dockerfile
-
-  webstatus:
-    image: repo-docker/webstatus
-    build:
-      context: .
-      dockerfile: src/Web/WebStatus/Dockerfile
-
-  webspa:
-    image: repo-docker/webspa
-    build:
-      context: .
-      dockerfile: src/Web/WebSPA/Dockerfile    
-
-  webmvc:
-    image: repo-docker/webmvc
-    build:
-      context: .
-      dockerfile: src/Web/WebMVC/Dockerfile    
-  
-  webhooks.client:
-    image: repo-docker/webhooksclient
-    build:
-      context: .
-      dockerfile: src/Web/WebhookClient/Dockerfile
+  #basket.api:
+  #  image: repo-docker/basket
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Basket/Basket.API/Dockerfile    
+#
+  #catalog.api:
+  #  image: repo-docker/catalog
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Catalog/Catalog.API/Dockerfile
+#
+  #ordering.api:
+  #  image: repo-docker/ordering
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Ordering/Ordering.API/Dockerfile    
+#
+  #ordering.backgroundtasks:
+  #  image: repo-docker/orderingbackgroundtasks
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile    
+#
+  #marketing.api:
+  #  image: repo-docker/marketing
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Marketing/Marketing.API/Dockerfile    
+#
+  #payment.api:
+  #  image: repo-docker/payment
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Payment/Payment.API/Dockerfile
+#
+  #locations.api:
+  #  image: repo-docker/locations
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Location/Locations.API/Dockerfile
+#
+  #webhooks.api:
+  #  image: repo-docker/webhooks
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Webhooks/Webhooks.API/Dockerfile
+#
+  #ordering.signalrhub:
+  #  image: repo-docker/orderingsignalrhub
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Ordering/Ordering.SignalrHub/Dockerfile
+#
+  #webstatus:
+  #  image: repo-docker/webstatus
+  #  build:
+  #    context: .
+  #    dockerfile: src/Web/WebStatus/Dockerfile
+#
+  #webspa:
+  #  image: repo-docker/webspa
+  #  build:
+  #    context: .
+  #    dockerfile: src/Web/WebSPA/Dockerfile    
+#
+  #webmvc:
+  #  image: repo-docker/webmvc
+  #  build:
+  #    context: .
+  #    dockerfile: src/Web/WebMVC/Dockerfile    
+  #
+  #webhooks.client:
+  #  image: repo-docker/webhooksclient
+  #  build:
+  #    context: .
+  #    dockerfile: src/Web/WebhookClient/Dockerfile
