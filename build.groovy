@@ -45,11 +45,10 @@ pipeline {
         }
       }
     }
-    stage('Remove Unused docker image'){
-        steps{
-            sh "docker ps"
-            //sh "docker image prune -all"
+  }
+  post { 
+        always { 
+             sh "docker image prune -a --force"
         }
     }
-  }
 }
