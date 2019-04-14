@@ -13,9 +13,6 @@ services:
     build:
       context: .
       dockerfile: src/Services/Basket/Basket.API/Dockerfile    
-    depends_on:
-      - basket.data
-      - identity.api
 
   catalog.api:
     image: repo-docker/catalog
@@ -28,9 +25,6 @@ services:
     build:
       context: .
       dockerfile: src/Services/Ordering/Ordering.API/Dockerfile    
-    depends_on:
-      - sql.data
-      - rabbitmq
 
   ordering.backgroundtasks:
     image: repo-docker/orderingbackgroundtasks
@@ -43,9 +37,6 @@ services:
     build:
       context: .
       dockerfile: src/Services/Marketing/Marketing.API/Dockerfile    
-    depends_on:
-      - identity.api
-      - rabbitmq
 
   payment.api:
     image: repo-docker/payment
@@ -70,12 +61,6 @@ services:
     build:
       context: .
       dockerfile: src/Services/Ordering/Ordering.SignalrHub/Dockerfile
-    depends_on:
-      - identity.api
-      - ordering.api
-      - marketing.api
-      - catalog.api
-      - basket.api
 
   webstatus:
     image: repo-docker/webstatus
@@ -94,15 +79,9 @@ services:
     build:
       context: .
       dockerfile: src/Web/WebMVC/Dockerfile    
-    depends_on:
-      - webshoppingagg
-      - webshoppingapigw
-      - webmarketingapigw
   
   webhooks.client:
     image: repo-docker/webhooksclient
     build:
       context: .
       dockerfile: src/Web/WebhookClient/Dockerfile
-    depends_on:
-      - webhooks.api    
