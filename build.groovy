@@ -27,7 +27,7 @@ pipeline {
         script{
                 docker.withRegistry(registry, registryCredential)
                 {
-                    docker.image('repo-docker/identity').push(env.BUILD_NUMBER)
+                    docker.image('repo-docker/identity').push()
                     //docker.image('repo-docker/basket').push(env.BUILD_NUMBER)
                     //docker.image('repo-docker/catalog').push(env.BUILD_NUMBER)
                     //docker.image('repo-docker/ordering').push(env.BUILD_NUMBER)
